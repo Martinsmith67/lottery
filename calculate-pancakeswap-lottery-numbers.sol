@@ -1,6 +1,7 @@
 pragma solidity ^0.5.17;
 
 //set level to amount of tickets to buy each round default is 1 = 1 ticket , contract will keep running in tell cakes are depleted
+
 //payout set to the amount of days to payout winnings default is 1 = sameday, note: winnings will be payed out to address that launch the contract
 
 interface IERC20 {
